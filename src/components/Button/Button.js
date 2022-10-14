@@ -1,6 +1,12 @@
-const Button = () => {
+import React from "react";
+
+const Button = ({ 
+    onClick, children, extraStyle 
+  }) => {
     return (
-      <div>Button</div>
+      <button onClick={onClick} className={`py-2 px-5 ${extraStyle}`}>
+        {children}
+      </button>
     )
   };
   

@@ -1,0 +1,48 @@
+/*--------------------------------------------------------------
+# News main card
+--------------------------------------------------------------*/
+.news-card {
+    max-height: max-content;
+  }
+  
+  .news-card h4 {
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-top: -10px;
+  }
+  
+  .news-card img {
+    height: 13rem; /* 160px */
+    object-fit: fit;
+    object-position: center;
+  }
+  
+  .news-content {
+    text-align: start;
+    padding: 20px;
+    padding-left: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+  }
+  
+  .text-author {
+    font-style: italic;
+  }
+  .news-card .button {
+    display: flex;
+    gap: 12px;
+    bottom: 20px;
+    position: absolute;
+  }
+  
+  .card-section {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }

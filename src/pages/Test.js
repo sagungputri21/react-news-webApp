@@ -12,7 +12,7 @@ const Test = () => {
   const newsData = async () => {
     try {
       const data = await client.get(
-        `everything?q=programming&from=${date}&sortBy=publishedAt`
+        `everything?q=covid&from=${date}&sortBy=publishedAt`
       );
       setNews(data.data.articles);
     } catch (err) {
@@ -41,7 +41,16 @@ const Test = () => {
           />
         ))}
       </div>
-      <SavedNewsCard />
+      {news?.slice(0, 5).map((data) => (
+          <SavedNewsCard 
+            imageURL={data.urlToImage}
+            name={data.source.name}
+            title={data.title}
+            author={data.author}
+            path={data.url}
+            desc={data.description}
+          />
+        ))}
     </div>
   );
 };

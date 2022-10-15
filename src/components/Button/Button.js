@@ -1,8 +1,15 @@
-const Button = () => {
+import React from "react";
+import { Button } from "react-bootstrap";
+
+const CustomButton = ({ 
+    onClick, children, extraStyle 
+  }) => {
     return (
-      <div>Button</div>
+      <Button onClick={onClick} className={`py-2 px-3 ${extraStyle}`}>
+        {children}
+      </Button>
     )
   };
   
-export default Button;
+export default CustomButton;
   

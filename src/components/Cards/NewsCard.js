@@ -8,10 +8,10 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
     return (
       <div style={{ width: '22rem' }} className="news-card">
-        <Card style={{height: '465px'}}>
+        <Card style={{height: '460px'}}>
           {/*images*/}
           <img className="img-fluid" 
-            src={`${imageURL === null ? "/assests/image-not-found.jpg" : `${imageURL}`}`} 
+            src={`${imageURL == null ? "/assests/image-not-found.jpg" : `${imageURL}`}`} 
             alt={alt} 
           />
           <div className="news-content"> {/*date and name*/}
@@ -24,7 +24,7 @@ const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
               {`${title.length >= 110 ? `${title.substring(0, 110)}...` : `${title}`}`}
             </h4>
             {/*author*/}
-            <p className={`text-author ${author === null ? "visually-hidden" : ""}`} 
+            <p className={`text-author pb-1 ${author === null || author === "" ? "visually-hidden" : ""}`} 
               >Author : {author}
             </p>
             <div className="grid btn-primary button gap-2.5">

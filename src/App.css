@@ -39,7 +39,7 @@
 
 .card-section {
   margin-top: 10px;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;

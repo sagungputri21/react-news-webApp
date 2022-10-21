@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import client from "../api/baseAPI";
+import client from "../api/baseApi";
 import NewsCard from "../components/Cards/NewsCard";
 import SavedNewsCard from "../components/Cards/SavedNewsCard";
+import Container from 'react-bootstrap/Container';
 
 const Test = () => {
   //atur last month ==> cek lagi besok
@@ -27,7 +28,8 @@ const Test = () => {
   console.log(news);
 
   return (
-    <div>
+    // <Container>
+    <div className="container-xxl">
       <div className="card-section">
         {news?.slice(0, 10).map((data) => (
           <NewsCard
@@ -41,6 +43,7 @@ const Test = () => {
           />
         ))}
       </div>
+      <div className="saved-layout">
       {news?.slice(0, 5).map((data) => (
           <SavedNewsCard 
             imageURL={data.urlToImage}
@@ -51,7 +54,19 @@ const Test = () => {
             desc={data.description}
           />
         ))}
+        {news?.slice(6, 10).map((data) => (
+          <SavedNewsCard 
+            imageURL={data.urlToImage}
+            name={data.source.name}
+            title={data.title}
+            author={data.author}
+            path={data.url}
+            desc={data.description}
+          />
+        ))}
     </div>
+    </div>
+    // </Container>
   );
 };
 

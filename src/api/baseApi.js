@@ -4,7 +4,7 @@ const client = axios.create({
     baseURL: 'https://newsapi.org/v2/',
     headers: {
       'Accept': 'application/json',
-      'Authorization': '819bffcb40634093a8b33b3323776cf0'
+      'Authorization': '01f5c05e919a44258cbba17276d98d29'
     }
 })
 

@@ -4,10 +4,12 @@ import Home from './pages/Home';
 import Test from './pages/Test';
 import Covid19Page from './pages/Covid19Page';
 import ProgrammingPage from './pages/Programming';
+import NavbarComponent from './components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <NavbarComponent />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/test' element={<Test />} /> {/* cuma buat cek hasil slicing */}

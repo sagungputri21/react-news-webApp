@@ -127,6 +127,11 @@
   .saved-card .button {
     transform: scale(.95);
   }
+  .header-card img {
+    max-height: 20rem;
+    width: max-content;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 530px) {
@@ -162,4 +167,47 @@
   .saved-card .button {
     transform: scale(.95);
   }
+  .header-card img {
+    max-height: 16rem;
+    width: max-content;
+    object-fit: cover;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header card
+--------------------------------------------------------------*/
+.header-card {
+  padding-top: 12px;
+}
+.header-card .news-content {
+  text-align: start;
+  padding: 20px;
+  padding-left: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+}
+
+.header-card h3 {
+  line-height: 1.2;
+  font-weight: 600;
+  margin-top: -5px;
+}
+
+.desc-header {
+  font-weight: 400;
+  color: rgb(75 85 99);
+}
+
+.button {
+  display: flex;
+  gap: 12px;
+}
+
+.header-card img {
+  height: 25rem;
+  width: max-content;
+  object-fit: cover;
 }

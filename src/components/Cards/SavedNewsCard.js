@@ -4,6 +4,7 @@ import './style/Card.css'
 import CustomButton from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import NewsPageButton from '../Button/NewsPageButton';
 
 const SavedNewsCard = ({ 
     imageURL, author, name, title, desc, path 
@@ -22,9 +23,7 @@ const SavedNewsCard = ({
         </h3>
         {/* <p className='desc'>{desc.substring(0, 175)}...</p> */}
         <div class="d-flex align-items-center button gap-2.5">
-          <a href={path} target="_blank" rel="noopener noreferrer">
-            <CustomButton children={"News Page"} extraStyle={"btn-primary"} />
-          </a>
+          <NewsPageButton path={path} />
           <CustomButton
             onClick={""}
             extraStyle={"btn-light bg-danger"}

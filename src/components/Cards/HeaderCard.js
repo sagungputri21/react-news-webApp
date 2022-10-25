@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import NewsPageButton from '../Button/NewsPageButton';
 
-const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
+const HeaderCard = ({ imageURL, alt, name, title, date, author, path, desc }) => {
     return (
-      <div style={{ width: '22rem' }} className="news-card">
-        <Card style={{height: '460px'}}>
+      <div style={{ width: "100vw" }} className="header-card">
+        <div style={{height: 'fit-content'}}>
           {/*images*/}
           <img className="img-fluid" 
             src={`${imageURL == null ? "/assests/image-not-found.jpg" : `${imageURL}`}`} 
@@ -19,15 +19,12 @@ const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
             <p className="flex text-date">
               {new Date(`${date}`).toDateString().slice(3)}
               <span className="mx-1 rounded-full">{" | "}</span>
-              {name}
+              {name} ( {author} )
             </p>
-            <h4 className='news-title'> {/*news's title*/}
+            <h3 className='news-title'> {/*news's title*/}
               {`${title.length >= 110 ? `${title.substring(0, 110)}...` : `${title}`}`}
-            </h4>
-            {/*author*/}
-            <p className={`text-author pb-1 ${author === null || author === "" || author.length >= 40 ? "visually-hidden" : ""}`} 
-              >Author : {author}
-            </p>
+            </h3>
+            <p className='desc-header'>{desc}</p>
             <div className="grid btn-primary button gap-2.5">
               <NewsPageButton path={path} />
               <CustomButton 
@@ -42,11 +39,11 @@ const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
               />
             </div>
           </div>
-        </Card>
-              
+        </div>   
+        <hr /> 
       </div>
     )
 };
   
-export default NewsCard;
+export default HeaderCard;
   

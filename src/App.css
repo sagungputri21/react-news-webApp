@@ -39,8 +39,26 @@
 
 .card-section {
   margin-top: 10px;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 35px;
   justify-content: center;
+}
+
+.text-title {
+  color: rgb(0 36 95);
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+.text-title h1 {
+  font-weight: 700;
+}
+
+.topic {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-color: #0ea5e9;
 }

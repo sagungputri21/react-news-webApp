@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
 import client from "../api/baseApi";
+import HeaderCard from "../components/Cards/HeaderCard";
 import NewsCard from "../components/Cards/NewsCard";
-import SavedNewsCard from "../components/Cards/SavedNewsCard";
-import Container from 'react-bootstrap/Container';
+import TextTitle from "../components/Title/TextTitle";
 
-const Test = () => {
-  //atur last month ==> cek lagi besok
+const Covid19Page = () => {
   const current = new Date();
   const date = new Date(current.setMonth(current.getMonth() - 1)).toISOString();
-  console.log(date)
   const [news, setNews] = useState([]);
 
   const newsData = async () => {
     try {
       const data = await client.get(
-        `everything?q=covid&from=${date}&sortBy=publishedAt`
+        `everything?q="+covid" OR "pandemic"&from=${date}&sortBy=relevancy`
       );
       setNews(data.data.articles);
     } catch (err) {
@@ -29,10 +27,22 @@ const Test = () => {
   console.log(news);
 
   return (
-    // <Container>
     <div className="container-xxl">
-      <div className="card-section">
-        {news?.slice(0, 10).map((data) => (
+      <TextTitle title="COVID-19" />
+      <section className="card-section">
+        {news?.slice(0, 1).map((data) => (
+          <HeaderCard
+            imageURL={data.urlToImage}
+            alt={`gambar dari ${data.title}`}
+            name={data.source.name}
+            title={data.title}
+            date={data.publishedAt}
+            author={data.author}
+            desc={data.description}
+            path={data.url}
+          />
+        ))}
+        {news?.slice(1).map((data) => (
           <NewsCard
             imageURL={data.urlToImage}
             alt={`gambar dari ${data.title}`}
@@ -43,32 +53,9 @@ const Test = () => {
             path={data.url}
           />
         ))}
-      </div>
-      <div className="saved-layout">
-      {news?.slice(0, 5).map((data) => (
-          <SavedNewsCard 
-            imageURL={data.urlToImage}
-            name={data.source.name}
-            title={data.title}
-            author={data.author}
-            path={data.url}
-            desc={data.description}
-          />
-        ))}
-        {news?.slice(6, 10).map((data) => (
-          <SavedNewsCard 
-            imageURL={data.urlToImage}
-            name={data.source.name}
-            title={data.title}
-            author={data.author}
-            path={data.url}
-            desc={data.description}
-          />
-        ))}
+      </section>
     </div>
-    </div>
-    // </Container>
   );
 };
 
-export default Test;
+export default Covid19Page;

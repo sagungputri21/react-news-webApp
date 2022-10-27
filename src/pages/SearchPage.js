@@ -33,7 +33,7 @@ const SearchPage = () => {
         <div className="container-xxl">
             <TextTitle title={capitalizeFirstLowercaseRest(`${searchTerm}`)} />
             <div className="card-section">
-                {news?.slice(0, 20).map((data) => (
+                {news?.map((data) => (
                     <NewsCard
                         imageURL={data.urlToImage}
                         alt={`gambar dari ${data.title}`}

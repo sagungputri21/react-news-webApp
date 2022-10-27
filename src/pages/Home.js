@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import client from "../api/baseApi";
 import NewsCard from "../components/Cards/NewsCard";
 import TextTitle from "../components/Title/TextTitle";
+import HeaderCard from "../components/Cards/HeaderCard";
 
 const Home = () => {
   const current = new Date();
@@ -21,15 +22,26 @@ const Home = () => {
 
   useEffect(() => {
     newsData();
-  }, []);
+  });
 
   console.log(news);
 
   return (
-    <div>
+    <div className="container-xxl">
       <TextTitle title="Indonesia"/>
       <div className="card-section">
-        {news?.slice(0, 20).map((data) => (
+        {news?.slice(0, 1).map((data) => (
+          <HeaderCard
+            imageURL={data.urlToImage}
+            alt={`gambar dari ${data.title}`}
+            name={data.source.name}
+            title={data.title}
+            date={data.publishedAt}
+            author={data.author}
+            path={data.url}
+          />
+        ))}
+        {news?.slice(1).map((data) => (
           <NewsCard
             imageURL={data.urlToImage}
             alt={`gambar dari ${data.title}`}

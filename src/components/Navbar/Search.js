@@ -23,6 +23,7 @@ const Search = () => {
         searchNews();
     }, []);
 
+
     return (
       <div className="Search">
         <div>

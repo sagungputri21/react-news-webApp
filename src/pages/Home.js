@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import client from "../api/baseApi";
 import NewsCard from "../components/Cards/NewsCard";
+import TextTitle from "../components/Title/TextTitle";
 
 const Home = () => {
   const current = new Date();
@@ -26,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 style={{marginBottom: 20}}>Indonesia News</h1>
+      <TextTitle title="Indonesia"/>
       <div className="card-section">
         {news?.slice(0, 20).map((data) => (
           <NewsCard

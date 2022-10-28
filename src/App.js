@@ -12,14 +12,14 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div className="App">
-       <NavbarComponent />
+      <NavbarComponent />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/test' element={<Test />} /> {/* cuma buat cek hasil slicing */}
         <Route path='/covid' element={<Covid19Page />} /> 
         <Route path='/programming' element={<ProgrammingPage />} /> 
         <Route path='/saved' element={<SavedPage />} />
         <Route path='/search' element={<SearchPage />} />
+        <Route path='/test' element={<Test />} /> {/* cuma buat cek hasil slicing */}
       </Routes>
       <Footer />
     </div>

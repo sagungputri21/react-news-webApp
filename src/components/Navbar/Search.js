@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CustomButton from "../Button/Button"
+import './style/Navbar.css'
 import PropTypes from 'prop-types'; // ES6
 import { Button, Form } from "react-bootstrap";
 
@@ -22,7 +22,7 @@ const Search = (props) => {
             onChange={(e) => setValue(e.target.value)}
         />
         
-        <Button variant="outline-success" onClick={() => newsData()}>
+        <Button className="button-custom" onClick={() => newsData()}>
           search 
         </Button>
         

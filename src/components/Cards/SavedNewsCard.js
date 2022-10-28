@@ -10,10 +10,12 @@ const SavedNewsCard = ({
     imageURL, author, name, title, desc, path 
   }) => {
   return (
-    <div class="d-flex saved-card">
-      <img className="saved-image" alt="" 
-        src={`${imageURL === null ? "/assests/image-not-found.jpg" : `${imageURL}`}`}
-      />
+    <div className="saved-card border">
+      <div className='d-flex px-3'>
+      <div className='d-flex'>
+        <img className="saved-image" alt=""
+          src={`${imageURL === null ? "/assests/image-not-found.jpg" : `${imageURL}`}`} />
+      </div>
       <div className="saved-card-content">
         <p className="author-saved">
           {name} {`${author === null ? "" : `- ${author}`}`}
@@ -21,7 +23,7 @@ const SavedNewsCard = ({
         <h3 className="title">
           {`${title.length >= 110 ? `${title.substring(0, 110)}...` : `${title}`}`}
         </h3>
-        {/* <p className='desc'>{desc.substring(0, 175)}...</p> */}
+        <p className='desc'>{desc}</p>
         <div class="d-flex align-items-center button gap-2.5">
           <NewsPageButton path={path} />
           <CustomButton
@@ -31,10 +33,9 @@ const SavedNewsCard = ({
               // <i className="fa-light fa-bookMark"></i>
               <div className="">
                 <FontAwesomeIcon icon={faTrashAlt} />
-              </div>
-            }
-          />
+              </div>} />
         </div>
+      </div>
       </div>
     </div>
   );

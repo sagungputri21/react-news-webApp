@@ -14,7 +14,7 @@ const Test = () => {
   const newsData = async () => {
     try {
       const data = await client.get(
-        `everything?q=covid&from=${date}&sortBy=publishedAt`
+        `everything?q="programming" OR "coding"&from=${date}&searchIn=title`
       );
       setNews(data.data.articles);
     } catch (err) {
@@ -44,8 +44,9 @@ const Test = () => {
           />
         ))}
       </div>
-      <div className="saved-layout">
+      {/* <div className="saved-layout"> */}
       {news?.slice(0, 5).map((data) => (
+        <div>
           <SavedNewsCard 
             imageURL={data.urlToImage}
             name={data.source.name}
@@ -54,8 +55,13 @@ const Test = () => {
             path={data.url}
             desc={data.description}
           />
+          <hr/>
+        </div>
+          
         ))}
-        {news?.slice(6, 10).map((data) => (
+
+
+        {/* {news?.slice(6, 10).map((data) => (
           <SavedNewsCard 
             imageURL={data.urlToImage}
             name={data.source.name}
@@ -64,9 +70,9 @@ const Test = () => {
             path={data.url}
             desc={data.description}
           />
-        ))}
+        ))} */}
     </div>
-    </div>
+    // </div>
     // </Container>
   );
 };

@@ -69,44 +69,54 @@
 
 .title {
   margin-bottom: 12px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .author-saved {
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .saved-card {
-  margin-bottom: 30px;
-  max-width: 750px;
-  /* max-width: 75%; */
+  /* margin-bottom: 30px; */
+  /* max-width: 750px;
+  max-width: 75%; */
+}
+
+.saved-card .desc {
+  color: rgb(75 85 99);
+  font-weight: 400;
 }
 
 .saved-card .button {
   display: flex;
   gap: 12px;
+  justify-items: start;
 }
 
 .saved-image {
-  display: flex;
   width: 12rem;
   height: 10rem; 
-  margin-left: 20px;
-  margin-top: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
 }
 
 @media (max-width: 960px) {
   .saved-image {
     width: 12rem; 
     height: 10rem; 
-    margin-left: 20px;
     margin-top: 30px;
   }
   .saved-card {
     max-width: 100%;
     /* margin-left: 15px;  //nanti isi di layout page langsung
     margin-right: 15px; */
+  }
+
+  .desc {
+    font-size: 14px;
   }
 }
 
@@ -137,9 +147,9 @@
 @media (max-width: 530px) {
   .saved-image {
     width: 95vw;
-    padding-left: 0px;
     padding-right: 16px;
     height: 8rem;
+    padding-left: 14px;
   }
   .title {
     font-weight: 600;
@@ -179,6 +189,8 @@
 --------------------------------------------------------------*/
 .header-card {
   padding-top: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .header-card .news-content {
   text-align: start;
@@ -208,6 +220,8 @@
 
 .header-card img {
   height: 25rem;
-  width: max-content;
+  /* width: max-content; */
+  width: 100vw;
+  /* width: 1280px; */
   object-fit: cover;
 }

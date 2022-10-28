@@ -11,10 +11,10 @@ const NavbarComponent = () => {
           <Navbar bg="dark" variant="dark">
             <Container>
               <Nav className="me-auto gap-3">
-                <Link to="/">Indonesia</Link>
-                <Link to='/covid'>Covid-19</Link> 
-                <Link to='/programming'>Programming</Link>
-                <Link to='/saved'>Saved</Link>
+                <Link className='text-link' to="/">Indonesia</Link>
+                <Link className='text-link' to='/covid'>Covid-19</Link> 
+                <Link className='text-link' to='/programming'>Programming</Link>
+                <Link className='text-link' to='/saved'>Saved</Link>
               </Nav>
               <Form className="d-flex">
                 <Search />

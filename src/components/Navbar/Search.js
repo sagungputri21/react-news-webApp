@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types'; // ES6
 import { Button, Form } from "react-bootstrap";
+import './style/Navbar.css';
 
 const Search = (props) => {
   const { text } = props;
@@ -20,7 +21,7 @@ const Search = (props) => {
             value={text}
             onChange={(e) => setValue(e.target.value)}
         />
-        <Button variant="outline-success" onClick={() => newsData()}>
+        <Button className="button-custom" onClick={() => newsData()}>
           search 
         </Button>
     </Form>

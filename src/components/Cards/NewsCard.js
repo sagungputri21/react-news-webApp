@@ -5,8 +5,21 @@ import CustomButton from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import NewsPageButton from '../Button/NewsPageButton';
+import { useDispatch } from "react-redux";
+import { saveActions } from '../../features/news/newsSlice';
 
-const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
+const NewsCard = ({ item, alt }) => {
+  const { imageURL, name, title, date, author, path, desc } = item;
+
+  const dispatch = useDispatch();
+  const saveUnsavedData = () => {
+    dispatch(
+      saveActions.saveItem({
+        imageURL, name, title, author, path, desc
+      })
+    );
+  };
+
     return (
       <div style={{ width: '22rem' }} className="news-card">
         <Card style={{height: '460px'}}>
@@ -31,7 +44,7 @@ const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
             <div className="grid btn-primary button gap-2.5">
               <NewsPageButton path={path} />
               <CustomButton 
-                onClick={""}
+                onClick={saveUnsavedData}
                 extraStyle={"btn-light"}
                 children={
                   // <i className="fa-light fa-bookMark"></i>
@@ -42,8 +55,7 @@ const NewsCard = ({ imageURL, alt, name, title, date, author, path }) => {
               />
             </div>
           </div>
-        </Card>
-              
+        </Card>   
       </div>
     )
 };

@@ -32,24 +32,14 @@ const Home = () => {
       <div className="card-section">
         {news?.slice(0, 1).map((data) => (
           <HeaderCard
-            imageURL={data.urlToImage}
+            item={data}
             alt={`gambar dari ${data.title}`}
-            name={data.source.name}
-            title={data.title}
-            date={data.publishedAt}
-            author={data.author}
-            path={data.url}
           />
         ))}
         {news?.slice(1).map((data) => (
           <NewsCard
-            imageURL={data.urlToImage}
+            item={data}
             alt={`gambar dari ${data.title}`}
-            name={data.source.name}
-            title={data.title}
-            date={data.publishedAt}
-            author={data.author}
-            path={data.url}
           />
         ))}
       </div>

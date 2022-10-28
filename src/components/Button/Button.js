@@ -5,7 +5,7 @@ const CustomButton = ({
     onClick, children, extraStyle 
   }) => {
     return (
-      <Button onClick={onClick} className={`py-2 px-3 ${extraStyle}`}>
+      <Button onClick={onClick} className={`py-2 px-3 fs-6 ${extraStyle}`}>
         {children}
       </Button>
     )

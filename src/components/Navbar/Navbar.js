@@ -14,6 +14,7 @@ const NavbarComponent = () => {
                 <Link to="/">Indonesia</Link>
                 <Link to='/covid'>Covid-19</Link> 
                 <Link to='/programming'>Programming</Link>
+                <Link to='/saved'>Saved</Link>
               </Nav>
               <Form className="d-flex">
                 <Search />

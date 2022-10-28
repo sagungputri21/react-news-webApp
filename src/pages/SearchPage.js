@@ -35,18 +35,12 @@ const SearchPage = () => {
             <div className="card-section">
                 {news?.map((data) => (
                     <NewsCard
-                        imageURL={data.urlToImage}
+                        item={data}
                         alt={`gambar dari ${data.title}`}
-                        name={data.source.name}
-                        title={data.title}
-                        date={data.publishedAt}
-                        author={data.author}
-                        path={data.url}
                     />
                 ))}
             </div>
         </div>
-        
     )
 }
 

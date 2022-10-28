@@ -5,10 +5,15 @@ import CustomButton from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import NewsPageButton from '../Button/NewsPageButton';
+import { useDispatch } from "react-redux";
+import { saveActions } from '../../features/news/newsSlice';
 
-const SavedNewsCard = ({ 
-    imageURL, author, name, title, desc, path 
-  }) => {
+const SavedNewsCard = ({ item }) => {
+  const { imageURL, author, name, title, desc, path } = item;
+    const dispatch = useDispatch();
+    const deleteData = () => {
+      dispatch(saveActions.deleteItem(title));
+    }
   return (
     <div className="saved-card border">
       <div className='d-flex px-3'>
@@ -27,7 +32,7 @@ const SavedNewsCard = ({
         <div class="d-flex align-items-center button gap-2.5">
           <NewsPageButton path={path} />
           <CustomButton
-            onClick={""}
+            onClick={deleteData}
             extraStyle={"btn-light bg-danger"}
             children={
               // <i className="fa-light fa-bookMark"></i>

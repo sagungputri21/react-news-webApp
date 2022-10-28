@@ -1,7 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Test from './pages/Test';
 import Covid19Page from './pages/Covid19Page';
 import ProgrammingPage from './pages/Programming';
 import NavbarComponent from './components/Navbar/Navbar';
@@ -19,7 +18,6 @@ function App() {
         <Route path='/programming' element={<ProgrammingPage />} /> 
         <Route path='/saved' element={<SavedPage />} />
         <Route path='/search' element={<SearchPage />} />
-        <Route path='/test' element={<Test />} /> {/* cuma buat cek hasil slicing */}
       </Routes>
       <Footer />
     </div>
